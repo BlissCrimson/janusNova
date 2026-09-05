@@ -5,3 +5,9 @@
 - Neu: src/styles/ nach 7-1 Pattern (abstracts, base, components, layout, pages, themes, vendors), main.scss bindet alle 7 Ordner via @use ein. Module über @use/@forward (kein @import).
 - index.html: <script type="module" src="/src/main.ts"> vor </body> ergänzt.
 - Verifiziert mit `pnpm build` (tsc -noEmit && vite build) – erfolgreich.
+
+## 2026-09-06
+- Impressum-Seite als Vite-Multi-Page-Entry angelegt.
+- Neu: vite.config.ts (rollupOptions.input registriert index.html + impressum.html, sonst würde `vite build` impressum.html ignorieren). Bewusst ohne node:path/__dirname, um @types/node-Installation zu vermeiden (Regel: keine Packages selbst installieren) – relative Pfadstrings reichen für Vite.
+- Neu: impressum.html (Root, analog zu index.html), bindet ebenfalls src/main.ts ein (globale Styles). Inhalt: Platzhalter-Kommentar "Impressum-Inhalt hier einfügen", Inhalt fügt der Nutzer selbst ein.
+- Verifiziert mit `pnpm build` – dist/index.html und dist/impressum.html werden erzeugt.
