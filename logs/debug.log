@@ -1,0 +1,7 @@
+## 2026-09-05
+- Grundgerüst für TypeScript + SASS (7-1 Pattern) angelegt.
+- Neu: src/main.ts (Entry Point, importiert src/styles/main.scss), src/vite-env.d.ts (Vite-Client-Typen für Asset-Imports).
+- Neu: src/components/, src/utils/ (leere Basisordner mit .gitkeep).
+- Neu: src/styles/ nach 7-1 Pattern (abstracts, base, components, layout, pages, themes, vendors), main.scss bindet alle 7 Ordner via @use ein. Module über @use/@forward (kein @import).
+- index.html: <script type="module" src="/src/main.ts"> vor </body> ergänzt.
+- Verifiziert mit `pnpm build` (tsc -noEmit && vite build) – erfolgreich.

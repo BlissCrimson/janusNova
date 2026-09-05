@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(python*:*)",
+      "Edit(./logs/debug.log)",
+      "Edit(./logs/**)",
+      "Edit(./docs/**)",
+      "Edit(./script.js)",
+      "Edit(./index.html)"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$json = [System.Console]::In.ReadToEnd() | ConvertFrom-Json; if ($json.tool_input.command -match 'npm (install|i|add)') { Write-Output '{\"decision\": \"block\", \"reason\": \"Packages bitte selbst installieren\"}' }",
+            "shell": "powershell"
+          }
+        ]
+      }
+    ]
+  }
+}
