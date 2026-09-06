@@ -1,1 +1,10 @@
 // Forward component partials here, e.g. @forward 'button';
+@forward "header";
+@forward "nav";
+@forward "button";
+@forward "hero";
+@forward "services";
+@forward "techniques";
+@forward "about";
+@forward "contact";
+@forward "footer";

@@ -1,0 +1,104 @@
+// Contact / Kontakt section
+@use '../abstracts' as *;
+
+.contact {
+  padding-block: px-to-rem(96);
+  scroll-margin-top: px-to-rem(80);
+}
+
+.contact__layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: px-to-rem(48);
+
+  @include respond(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: px-to-rem(12);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: px-to-rem(16);
+}
+
+.contact__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: px-to-rem(36);
+  margin-bottom: px-to-rem(20);
+
+  em {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+}
+
+.contact__intro {
+  font-size: px-to-rem(15);
+  line-height: 1.7;
+  color: var(--color-muted-light);
+  margin-bottom: px-to-rem(32);
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(20);
+
+  h4 {
+    font-family: var(--font-body);
+    font-size: px-to-rem(12);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: px-to-rem(4);
+  }
+
+  a {
+    color: var(--color-fg);
+  }
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(20);
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(8);
+  }
+
+  p {
+    font-size: px-to-rem(12);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-muted-light);
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: var(--font-body);
+    font-size: px-to-rem(15);
+    color: var(--color-fg);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: px-to-rem(12) px-to-rem(14);
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-gold);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}

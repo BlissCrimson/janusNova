@@ -11,3 +11,16 @@
 - Neu: vite.config.ts (rollupOptions.input registriert index.html + impressum.html, sonst würde `vite build` impressum.html ignorieren). Bewusst ohne node:path/__dirname, um @types/node-Installation zu vermeiden (Regel: keine Packages selbst installieren) – relative Pfadstrings reichen für Vite.
 - Neu: impressum.html (Root, analog zu index.html), bindet ebenfalls src/main.ts ein (globale Styles). Inhalt: Platzhalter-Kommentar "Impressum-Inhalt hier einfügen", Inhalt fügt der Nutzer selbst ein.
 - Verifiziert mit `pnpm build` – dist/index.html und dist/impressum.html werden erzeugt.
+
+## 2026-09-06 (Website v1)
+- Erste vollständige Website-Version umgesetzt, inhaltlich sinngemäß an die Figma-Make-Referenz in docs/ angelehnt, aber ohne Referenzen/Portfolio-Section und ohne "Anbringen"-Formulierungen (Montage von Folien vor Ort wird nicht angeboten – Schwerpunkt liegt auf Zuschnitt, Transferfolien-Applikation und Versand). Leistungen umfassen zusätzlich Webdesign als drittes Standbein (auf Wunsch ergänzt).
+- Bugfix: src/styles/themes/_firstTheme.scss – `@theme { ... }` (ungültige Tailwind-v4-Syntax, hier nicht vorhanden) zu `:root { ... }` korrigiert, Body-Styles auf CSS Custom Properties umgestellt, zusätzliche Farbtokens ergänzt (--color-muted-light, --color-surface-alt, --color-footer-muted).
+- Bugfix: src/styles/components/_index.scss – `_nav.scss` war nicht eingebunden, jetzt geforwardet.
+- Bugfix: index.html – kaputte Anchor-Links (#aboutus/#contact ohne passende IDs) korrigiert, lose Über-uns-Spans in die Section verschachtelt, Tippfehler korrigiert, leere Hero-Section befüllt, ungenutzten `<div id="app">` entfernt.
+- Bugfix: Google-Fonts-Links (Fraunces, Outfit) in index.html und impressum.html ergänzt – Fonts wurden bisher referenziert, aber nie geladen.
+- Bugfix: tsconfig.json – `exclude: ["docs", "dist", "node_modules"]` ergänzt, da `tsc -noEmit` sonst die JSX/React-Referenzdatei in docs/ mitkompilierte und `pnpm build` fehlschlug.
+- Neu: src/styles/components/_hero.scss, _services.scss, _techniques.scss, _about.scss, _contact.scss, _footer.scss, src/styles/layout/_container.scss (jeweils in die passenden _index.scss forwarded), unter Wiederverwendung der bestehenden Mixins (respond, flex-row, px-to-rem) und Farbtokens.
+- Neu: src/components/nav.ts (Mobile-Burger-Toggle + Scroll-Header-Klasse), src/components/contactForm.ts (mailto-Fallback fürs Kontaktformular, da kein Backend existiert). src/main.ts initialisiert beide.
+- index.html: Techniken-Section neu eingefügt, Leistungen-Section um dritte Karte "Webdesign" erweitert, Kontaktformular-Betreff-Feld durch Leistungsbereich-Select ersetzt, Footer zeigt nur Impressum-Link (Datenschutz/AGB bewusst weggelassen, da noch keine Seiten existieren).
+- impressum.html: Header/Footer mit index.html synchronisiert (Branding + korrekte Nav-Links auf index.html#... ), Font-Links ergänzt.
+- Verifiziert mit `pnpm build` (fehlerfrei) und `pnpm dev` (Seite manuell per curl auf Struktur geprüft). Hinweis: echte visuelle/interaktive Browser-Prüfung (Klick-Tests, Responsive-Screenshots) konnte in dieser Umgebung nicht durchgeführt werden, da kein Browser-Automatisierungstool (chromium-cli/Playwright) verfügbar ist und keine neuen Packages installiert werden dürfen – empfehle manuelle Kontrolle durch den User vor Livegang.

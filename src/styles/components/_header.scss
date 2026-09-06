@@ -1,0 +1,47 @@
+// Site header: brand + navigation bar
+@use '../abstracts' as *;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: px-to-rem(20) px-to-rem(32);
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  &.scrolled {
+    background-color: var(--color-bg);
+    border-bottom-color: var(--color-border);
+  }
+
+  @include respond(sm) {
+    padding: px-to-rem(16) px-to-rem(20);
+  }
+}
+
+.header__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+
+  .header__logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: px-to-rem(22);
+    color: var(--color-fg);
+  }
+
+  .header__tagline {
+    font-family: var(--font-body);
+    font-size: px-to-rem(11);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+}

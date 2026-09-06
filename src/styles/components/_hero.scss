@@ -1,0 +1,78 @@
+// Hero section
+@use '../abstracts' as *;
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: px-to-rem(48);
+  padding-bottom: px-to-rem(48);
+  scroll-margin-top: px-to-rem(80);
+
+  @include respond(md) {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
+
+.hero__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: px-to-rem(12);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: px-to-rem(16);
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: px-to-rem(64);
+  line-height: 1.1;
+  margin-bottom: px-to-rem(24);
+
+  em {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+
+  @include respond(md) {
+    font-size: px-to-rem(42);
+  }
+}
+
+.hero__subtext {
+  font-size: px-to-rem(17);
+  line-height: 1.7;
+  color: var(--color-muted-light);
+  max-width: px-to-rem(480);
+  margin-bottom: px-to-rem(32);
+}
+
+.hero__ctas {
+  @include flex-row;
+  gap: px-to-rem(16);
+  margin-bottom: px-to-rem(32);
+
+  @include respond(sm) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.hero__meta {
+  font-size: px-to-rem(13);
+  color: var(--color-muted);
+}
+
+.hero__visual {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, var(--color-surface-2), var(--color-gold-dim));
+  border: 1px solid var(--color-border);
+
+  @include respond(md) {
+    display: none;
+  }
+}
