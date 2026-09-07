@@ -11,6 +11,9 @@
   --color-muted: #7A7166;
   --color-muted-light: #9A9088;
   --color-footer-muted: #4A4540;
+  --color-gradient-top: #0A0908;
+  --color-gradient-mid: #3A2E13;
+  --color-gradient-bottom: #000000;
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Outfit', system-ui, sans-serif;
@@ -21,7 +24,7 @@ html {
 }
 
 body {
-  background-color: var(--color-bg);
+  background: linear-gradient(to bottom, var(--color-gradient-top), var(--color-gradient-mid), var(--color-gradient-bottom));
   color: var(--color-fg);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;

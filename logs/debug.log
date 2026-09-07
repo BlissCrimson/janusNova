@@ -24,3 +24,9 @@
 - index.html: Techniken-Section neu eingefügt, Leistungen-Section um dritte Karte "Webdesign" erweitert, Kontaktformular-Betreff-Feld durch Leistungsbereich-Select ersetzt, Footer zeigt nur Impressum-Link (Datenschutz/AGB bewusst weggelassen, da noch keine Seiten existieren).
 - impressum.html: Header/Footer mit index.html synchronisiert (Branding + korrekte Nav-Links auf index.html#... ), Font-Links ergänzt.
 - Verifiziert mit `pnpm build` (fehlerfrei) und `pnpm dev` (Seite manuell per curl auf Struktur geprüft). Hinweis: echte visuelle/interaktive Browser-Prüfung (Klick-Tests, Responsive-Screenshots) konnte in dieser Umgebung nicht durchgeführt werden, da kein Browser-Automatisierungstool (chromium-cli/Playwright) verfügbar ist und keine neuen Packages installiert werden dürfen – empfehle manuelle Kontrolle durch den User vor Livegang.
+
+## 2026-09-06 (Bild-Platzhalter entfernt, Hintergrund-Gradient)
+- Bild-Platzhalter-Divs entfernt: `.hero__visual` und `.about__visual` aus index.html sowie den zugehörigen SCSS-Regeln in _hero.scss/_about.scss gelöscht. Hero und Über-uns-Layout jetzt einspaltig (kein 2-Spalten-Grid mehr für Bild+Text).
+- Neu: Seitenweiter Hintergrund-Gradient (oben dunkel, Mitte dunkles Gold, unten schwarz) via `body { background: linear-gradient(...) }` in src/styles/themes/_firstTheme.scss, `background-attachment: fixed`. Neue Farbtokens `--color-gradient-top` (#0A0908), `--color-gradient-mid` (#3A2E13, dunkles Gold), `--color-gradient-bottom` (#000000).
+- Solides `background-color` der Techniken-Section entfernt, damit der Gradient dort durchscheint.
+- Verifiziert mit `pnpm build` – erfolgreich.

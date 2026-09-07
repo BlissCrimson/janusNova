@@ -3,17 +3,19 @@
 
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: px-to-rem(48);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-bottom: px-to-rem(48);
   scroll-margin-top: px-to-rem(80);
 
   @include respond(md) {
-    grid-template-columns: 1fr;
     min-height: auto;
   }
+}
+
+.hero__content {
+  max-width: px-to-rem(720);
 }
 
 .hero__eyebrow {
@@ -65,14 +67,4 @@
 .hero__meta {
   font-size: px-to-rem(13);
   color: var(--color-muted);
-}
-
-.hero__visual {
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(160deg, var(--color-surface-2), var(--color-gold-dim));
-  border: 1px solid var(--color-border);
-
-  @include respond(md) {
-    display: none;
-  }
 }
