@@ -1,0 +1,8 @@
+@use "../abstracts/functions" as fct;
+@use "../abstracts/mixins" as mx;
+
+.button {
+  @include fct.px-to-rem();
+
+  
+}
