@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.FTPS_USERNAME }}
           password: ${{ secrets.FTPS_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /janusnova.de/
+          server-dir: /
         continue-on-error: true
 
       - name: Retry Deploy to FTPS
