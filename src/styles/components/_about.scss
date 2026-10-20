@@ -1,0 +1,58 @@
+// About / Über uns section
+@use '../abstracts' as *;
+
+.about {
+  padding-block: px-to-rem(96);
+  scroll-margin-top: px-to-rem(80);
+}
+
+.about__layout {
+  max-width: px-to-rem(760);
+}
+
+.about__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: px-to-rem(12);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: px-to-rem(16);
+}
+
+.about__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: px-to-rem(36);
+  margin-bottom: px-to-rem(24);
+
+  em {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: px-to-rem(16);
+  margin-bottom: px-to-rem(32);
+
+  span {
+    font-size: px-to-rem(15);
+    line-height: 1.75;
+    color: var(--color-muted-light);
+  }
+}
+
+.about__facts {
+  @include flex-row;
+  flex-wrap: wrap;
+  gap: px-to-rem(32);
+
+  span {
+    display: block;
+    font-size: px-to-rem(13);
+    color: var(--color-fg);
+  }
+}

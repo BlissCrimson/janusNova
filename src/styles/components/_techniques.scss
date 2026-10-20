@@ -1,0 +1,85 @@
+// Techniques / Techniken section
+@use '../abstracts' as *;
+
+.techniques {
+  padding-block: px-to-rem(96);
+  scroll-margin-top: px-to-rem(80);
+}
+
+.techniques__layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: px-to-rem(48);
+
+  @include respond(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.techniques__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: px-to-rem(12);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: px-to-rem(16);
+}
+
+.techniques__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: px-to-rem(36);
+  margin-bottom: px-to-rem(20);
+
+  em {
+    font-style: italic;
+    color: var(--color-gold);
+  }
+}
+
+.techniques__intro {
+  font-size: px-to-rem(15);
+  line-height: 1.7;
+  color: var(--color-muted-light);
+}
+
+.techniques__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background-color: var(--color-border);
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.technique-card {
+  background-color: var(--color-surface);
+  padding: px-to-rem(28) px-to-rem(24);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-surface-2);
+  }
+}
+
+.technique-card__icon {
+  display: block;
+  color: var(--color-gold);
+  font-size: px-to-rem(20);
+  margin-bottom: px-to-rem(12);
+}
+
+.technique-card__name {
+  font-family: var(--font-display);
+  font-size: px-to-rem(18);
+  margin-bottom: px-to-rem(8);
+}
+
+.technique-card__text {
+  font-size: px-to-rem(13);
+  line-height: 1.6;
+  color: var(--color-muted-light);
+}

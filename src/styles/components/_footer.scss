@@ -1,0 +1,21 @@
+// Footer
+@use '../abstracts' as *;
+
+footer {
+  @include flex-row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: px-to-rem(12);
+  padding: px-to-rem(32);
+  border-top: 1px solid var(--color-border);
+  font-size: px-to-rem(13);
+  color: var(--color-footer-muted);
+
+  a {
+    color: var(--color-footer-muted);
+
+    &:hover {
+      color: var(--color-gold);
+    }
+  }
+}

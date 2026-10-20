@@ -1,0 +1,12 @@
+// Reusable max-width wrapper for section content
+@use '../abstracts' as *;
+
+.container {
+  max-width: px-to-rem(1280);
+  margin-inline: auto;
+  padding-inline: px-to-rem(32);
+
+  @include respond(sm) {
+    padding-inline: px-to-rem(20);
+  }
+}

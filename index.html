@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janus Nova</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Google tag (gtag.js) with Consent Mode v2: everything denied until the visitor decides -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTW5YLC2SC"></script>
     <script>
@@ -27,58 +32,123 @@
 </head>
 
 <body>
-    <div id="app"></div>
     <header>
-        <div>
-
+        <div class="header__brand">
+            <p class="header__logo">Janus Nova</p>
+            <span class="header__tagline">Textilveredelung und Webdesign</span>
         </div>
         <nav>
-            <button><a href="/index.html">Home</a></button>
-            <button><a href="/index.html#aboutus">Über uns</a></button>
-            <button><a href="/index.html#contact">Kontakt</a></button>
+            <button class="button button__nav"><a href="#hero">Home</a></button>
+            <button class="button button__nav"><a href="#leistungen">Leistungen</a></button>
+            <button class="button button__nav"><a href="#techniken">Techniken</a></button>
+            <button class="button button__nav"><a href="#ueber-uns">Über uns</a></button>
+            <button class="button button__nav"><a href="#kontakt">Kontakt</a></button>
         </nav>
+        <button class="nav__burger" type="button" aria-expanded="false" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
-    <section></section>
-    <section aria-label="Leistungen"></section>
-    <div class="container">
-        <div class="services__header">
-            <span class="services__eyebrow">Was wir tun</span>
-            <h2 class="services__title">Zwei Disziplinen. <em>Ein Anspruch.</em></h2>
-        </div>
-        <div class="services__grid">
-            <div class="service-card">
-                <span class="service-card__tagline">Stoff als Markenbotschafter</span>
-                <h3 class="service-card__title">Textilveredelung</h3>
-                <p class="service-card__text">Wir veredeln Textilien aller Art — von Workwear bis Teamkleidung, von
-                    Lifestyle-Apparel bis Merchandising. Jedes Kleidungsstück wird zum Träger Ihrer Markenidentität.
-                </p>
-                <ul class="service-card__list">
-                    <li>Transferdruck (Flex &amp; Flock)</li>
-                    <li>Thermotransfer</li>
-                    <li>Flockdruck in Sonderfarben</li>
-                    <li>Direktdruck auf Textil</li>
-                    <li>Retroreflektierende Veredelung</li>
-                    <li>Puff-Effekte &amp; 3D-Optik</li>
-                </ul>
+    <section id="hero" class="hero container">
+        <div class="hero__content">
+            <span class="hero__eyebrow">Werbeagentur · Nordfriesland</span>
+            <h1 class="hero__title">Stoff.<br><em>Digital.</em><br>Wirkung.</h1>
+            <p class="hero__subtext">Janus Nova verleiht Textilien und dem Internet eine Stimme. Wir verbinden
+                handwerkliche Präzision mit materialgerechter Veredelung — von der Idee bis zum wunsch Design.</p>
+            <div class="hero__ctas">
+                <a class="button--primary" href="#leistungen">Leistungen</a>
+                <a class="button--outline" href="#kontakt">Anfrage stellen</a>
             </div>
-
-            <div class="service-card">
-                <span class="service-card__tagline">Auftritt im Netz</span>
-                <h3 class="service-card__title">Webdesign</h3>
-                <p class="service-card__text">Wir gestalten Websites, die zur gleichen visuellen Sprache wie Ihre
-                    Textilien und Folien passen — schlicht, schnell und auf das Wesentliche reduziert.</p>
-                <ul class="service-card__list">
-                    <li>Responsive Websites</li>
-                    <li>Landingpages</li>
-                    <li>Onepager für kleine Betriebe</li>
-                    <li>Pflege &amp; Aktualisierung</li>
-                </ul>
-            </div>
-
+            <p class="hero__meta">Eigene Werkstatt in Nordfriesland · Kleine und große Stückzahlen · Direkter Draht
+                zum Inhaber</p>
         </div>
-    </div>
-    <section>
+    </section>
+
+    <section id="leistungen" class="services" aria-label="Leistungen">
+        <div class="container">
+            <div class="services__header">
+                <span class="services__eyebrow">Was wir tun</span>
+                <h2 class="services__title">Zwei Disziplinen. <em>Ein Anspruch.</em></h2>
+            </div>
+            <div class="services__grid">
+                <div class="service-card">
+                    <span class="service-card__tagline">Stoff als Markenbotschafter</span>
+                    <h3 class="service-card__title">Textilveredelung</h3>
+                    <p class="service-card__text">Wir veredeln Textilien aller Art — von Workwear bis Teamkleidung, von
+                        Lifestyle-Apparel bis Merchandising. Jedes Kleidungsstück wird zum Träger Ihrer Markenidentität.
+                    </p>
+                    <ul class="service-card__list">
+                        <li>Transferdruck (Flex &amp; Flock)</li>
+                        <li>Thermotransfer</li>
+                        <li>Flockdruck in Sonderfarben</li>
+                        <li>Direktdruck auf Textil</li>
+                        <li>Retroreflektierende Veredelung</li>
+                        <li>Puff-Effekte &amp; 3D-Optik</li>
+                    </ul>
+                </div>
+                <!-- <div class="service-card">
+                <span class="service-card__tagline">Präzision im Zuschnitt</span>
+                <h3 class="service-card__title">Folienherstellung</h3>
+                <p class="service-card__text">Wir schneiden Vinyl-, Transfer- und Spezialfolien für Textilien,
+                    Fahrzeuge, Schaufenster und Innenräume passgenau zu und bringen sie anwendungsfertig auf
+                    Transferfolie auf. Versandfertig verpackt, bereit für Ihre eigene Applikation.</p>
+                <ul class="service-card__list">
+                    <li>Vinylfolie (Schneidplotter)</li>
+                    <li>Transferfolie &amp; Hotfix</li>
+                    <li>Zuschnitt für Fahrzeugbeschriftung</li>
+                    <li>Zuschnitt für Schaufensterbeschriftung</li>
+                    <li>Spiegelfolie &amp; Chrom-Optik</li>
+                    <li>Retroreflektierende Folie</li>
+                </ul>
+            </div> --><!-- <div class="service-card">
+                <span class="service-card__tagline">Präzision im Zuschnitt</span>
+                <h3 class="service-card__title">Folienherstellung</h3>
+                <p class="service-card__text">Wir schneiden Vinyl-, Transfer- und Spezialfolien für Textilien,
+                    Fahrzeuge, Schaufenster und Innenräume passgenau zu und bringen sie anwendungsfertig auf
+                    Transferfolie auf. Versandfertig verpackt, bereit für Ihre eigene Applikation.</p>
+                <ul class="service-card__list">
+                    <li>Vinylfolie (Schneidplotter)</li>
+                    <li>Transferfolie &amp; Hotfix</li>
+                    <li>Zuschnitt für Fahrzeugbeschriftung</li>
+                    <li>Zuschnitt für Schaufensterbeschriftung</li>
+                    <li>Spiegelfolie &amp; Chrom-Optik</li>
+                    <li>Retroreflektierende Folie</li>
+                </ul>
+            </div> -->
+                <div class="service-card">
+                    <span class="service-card__tagline">Auftritt im Netz</span>
+                    <h3 class="service-card__title">Webdesign</h3>
+                    <p class="service-card__text">Wir gestalten Websites, die zur gleichen visuellen Sprache wie Ihre
+                        Textilien und Folien passen — schlicht, schnell und auf das Wesentliche reduziert.</p>
+                    <ul class="service-card__list">
+                        <li>Responsive Websites</li>
+                        <li>Landingpages</li>
+                        <li>Onepager für kleine Betriebe</li>
+                        <li>Pflege &amp; Aktualisierung</li>
+                    </ul>
+                </div>
+                <!-- <div class="service-card">
+                    <span class="service-card__tagline">Ihr Gedanke = Unser Anspruch</span>
+                    <h3 class="service-card__title"></h3>
+                    <p class="service-card__text">Wir schneiden Vinyl-, Transfer- und Spezialfolien für Textilien,
+                        Fahrzeuge, Schaufenster und Innenräume passgenau zu und bringen sie anwendungsfertig auf
+                        Transferfolie auf. Versandfertig verpackt, bereit für Ihre eigene Applikation.</p>
+                    <ul class="service-card__list">
+                        <li>Vinylfolie (Schneidplotter)</li>
+                        <li>Transferfolie &amp; Hotfix</li>
+                        <li>Zuschnitt für Fahrzeugbeschriftung</li>
+                        <li>Zuschnitt für Schaufensterbeschriftung</li>
+                        <li>Spiegelfolie &amp; Chrom-Optik</li>
+                        <li>Retroreflektierende Folie</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="techniken" class="techniques" aria-label="Techniken">
         <div class="container">
             <div class="techniques__layout">
                 <div class="techniques__intro-col">
@@ -108,32 +178,56 @@
                         <h3 class="technique-card__name">Reflektiv</h3>
                         <p class="technique-card__text">Retroreflektierende Materialien für Sicherheits-Workwear</p>
                     </div>
-
+                    <!-- <div class="technique-card">
+                        <span class="technique-card__icon">◎</span>
+                        <h3 class="technique-card__name">Chrome &amp; Spiegel</h3>
+                        <p class="technique-card__text">Hochglänzende Spiegelfolien in Gold, Silber, Rosé</p>
+                    </div> -->
+                    <!-- <div class="technique-card">
+                        <span class="technique-card__icon">◆</span>
+                        <h3 class="technique-card__name">Thermotransfer</h3>
+                        <p class="technique-card__text">Hochauflösender Digitaldruck, direkt übertragen</p>
+                    </div> -->
+                    <!-- <div class="technique-card">
+                        <span class="technique-card__icon">◇</span>
+                        <h3 class="technique-card__name">Fahrzeugfolien-Zuschnitt</h3>
+                        <p class="technique-card__text">Präziser Konturschnitt für Ganz- und Teilfolierung,
+                            anwendungsfertig auf Transferfolie geliefert</p>
+                    </div> -->
+                    <!-- <div class="technique-card">
+                        <span class="technique-card__icon">○</span>
+                        <h3 class="technique-card__name">Schaufenster-Zuschnitt</h3>
+                        <p class="technique-card__text">Dekorfolien und Milchglasfolie, zugeschnitten nach Maß für
+                            Saisonwerbung</p>
+                    </div> -->
                 </div>
             </div>
         </div>
     </section>
-    <section aria-label="Über uns"></section>
-    <div class="about__layout">
-        <div class="about__content">
-            <span class="about__eyebrow">Über Janus Nova</span>
-            <h2 class="about__title">Wo Material <em>zur Botschaft</em> wird.</h2>
-            <div class="about__text">
-                <span>Janus Nova steht für Veredelung und Haltung. Seit 2026 arbeiten wir im Raum Nordfriesland
-                    mit Betrieben, Vereinen, Hotels und Einzelpersonen zusammen.</span>
-                <span>Unser Fokus liegt auf Textilveredelung und Webdesign. Keine Stickerei,
-                    kein klassischer Druck, keine Schilder- oder Lichtreklame.</span>
-                <span>Janus blickt in zwei Richtungen gleichzeitig: zur Tradition des Handwerks und zur Präzision
-                    moderner Technologie. Nova steht für das Neue — jedes Projekt ist ein Anfang.</span>
-            </div>
-            <div class="about__facts">
-                <span>Eigene Werkstatt · Nordfriesland</span>
-                <span>Kurze Lieferzeiten · nach Absprache</span>
-                <span>Ab 1 Stück · Mindestmenge</span>
+
+    <section id="ueber-uns" class="about container" aria-label="Über uns">
+        <div class="about__layout">
+            <div class="about__content">
+                <span class="about__eyebrow">Über Janus Nova</span>
+                <h2 class="about__title">Wo Material <em>zur Botschaft</em> wird.</h2>
+                <div class="about__text">
+                    <span>Janus Nova steht für Veredelung und Haltung. Seit 2026 arbeiten wir im Raum Nordfriesland
+                        mit Betrieben, Vereinen, Hotels und Einzelpersonen zusammen.</span>
+                    <span>Unser Fokus liegt auf Textilveredelung und Webdesign. Keine Stickerei,
+                        kein klassischer Druck, keine Schilder- oder Lichtreklame.</span>
+                    <span>Janus blickt in zwei Richtungen gleichzeitig: zur Tradition des Handwerks und zur Präzision
+                        moderner Technologie. Nova steht für das Neue — jedes Projekt ist ein Anfang.</span>
+                </div>
+                <div class="about__facts">
+                    <span>Eigene Werkstatt · Nordfriesland</span>
+                    <span>Kurze Lieferzeiten · nach Absprache</span>
+                    <span>Ab 1 Stück · Mindestmenge</span>
+                </div>
             </div>
         </div>
-    </div>
-    <section aria-label="Kontakt">
+    </section>
+
+    <section id="kontakt" class="contact container" aria-label="Kontakt">
         <div class="contact__layout">
             <div class="contact__info">
                 <span class="contact__eyebrow">Anfrage &amp; Kontakt</span>
@@ -190,10 +284,14 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Janus Nova. Alle Rechte Vorbehalten.</p><br>
-        <button> <a href="/impressum.html">Impressum</a></button>
-        <button> <a href="/datenschutz.html">Datenschutz</a></button>
+        <p>&copy; 2026 Janus Nova. Alle Rechte Vorbehalten.</p>
+        <button><a href="/impressum.html">Impressum</a></button>
+        <button><a href="/datenschutz.html">Datenschutz</a></button>
         <button type="button" data-consent-settings>Cookie-Einstellungen</button>
+        <!-- Start Partnerprogramm ALL‑INKL.COM --> <a href="https://all-inkl.com/PAC9D43765CD414"> <img border="0"
+                src="https://all-inkl.com/banner/all-inkl_banner_185x35_black.gif"
+                alt="ALL-INKL.COM - Webhosting Server Hosting Domain Provider" /></a>
+        <!-- Ende Partnerprogramm -->
     </footer>
 
     <script type="module" src="/src/main.ts"></script>

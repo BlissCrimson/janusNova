@@ -1,1 +1,6 @@
-// Base element rules
+// Base page-level rules
+@use '../abstracts' as *;
+
+body {
+  padding-top: px-to-rem(88);
+}
