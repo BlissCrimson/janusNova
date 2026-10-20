@@ -11,3 +11,10 @@
 - Neu: vite.config.ts (rollupOptions.input registriert index.html + impressum.html, sonst würde `vite build` impressum.html ignorieren). Bewusst ohne node:path/__dirname, um @types/node-Installation zu vermeiden (Regel: keine Packages selbst installieren) – relative Pfadstrings reichen für Vite.
 - Neu: impressum.html (Root, analog zu index.html), bindet ebenfalls src/main.ts ein (globale Styles). Inhalt: Platzhalter-Kommentar "Impressum-Inhalt hier einfügen", Inhalt fügt der Nutzer selbst ein.
 - Verifiziert mit `pnpm build` – dist/index.html und dist/impressum.html werden erzeugt.
+
+## 2026-10-20
+- Consent-Banner für Google Analytics (Google Consent Mode v2) eingebaut.
+- index.html: gtag-Snippet von zwischen </head> und <body> in den <head> verschoben; vor gtag('config') ergänzt: gtag('consent','default', …) mit analytics_storage/ad_* = denied (analytics_storage = granted, falls localStorage 'consent' bereits 'granted' ist). Footer: Links "Datenschutz" und Button "Cookie-Einstellungen" ergänzt.
+- Neu: src/utils/consent.ts (Banner per DOM, Speichern der Wahl in localStorage 'consent', gtag('consent','update'), Löschen der _ga*-Cookies bei Ablehnung, Footer-Button zum Widerrufen). Eingebunden in src/main.ts via initConsent().
+- Neu: src/styles/components/_consent-banner.scss, in components/_index.scss per @forward registriert.
+- Neu: datenschutz.html (Platzhalter, Inhalt fügt der Nutzer selbst ein), in vite.config.ts als Entry registriert. Footer-Links auch in impressum.html ergänzt.

@@ -6,16 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janus Nova</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BTW5YLC2SC"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Google tag (gtag.js) with Consent Mode v2: everything denied until the visitor decides -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTW5YLC2SC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
 
-    gtag('config', 'G-BTW5YLC2SC');
-</script>
+        var storedConsent = null;
+        try { storedConsent = localStorage.getItem('consent'); } catch (e) { }
+
+        gtag('consent', 'default', {
+            analytics_storage: storedConsent === 'granted' ? 'granted' : 'denied',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-BTW5YLC2SC');
+    </script>
+</head>
 
 <body>
     <div id="app"></div>
@@ -32,14 +41,159 @@
 
     <section></section>
     <section aria-label="Leistungen"></section>
+    <div class="container">
+        <div class="services__header">
+            <span class="services__eyebrow">Was wir tun</span>
+            <h2 class="services__title">Zwei Disziplinen. <em>Ein Anspruch.</em></h2>
+        </div>
+        <div class="services__grid">
+            <div class="service-card">
+                <span class="service-card__tagline">Stoff als Markenbotschafter</span>
+                <h3 class="service-card__title">Textilveredelung</h3>
+                <p class="service-card__text">Wir veredeln Textilien aller Art — von Workwear bis Teamkleidung, von
+                    Lifestyle-Apparel bis Merchandising. Jedes Kleidungsstück wird zum Träger Ihrer Markenidentität.
+                </p>
+                <ul class="service-card__list">
+                    <li>Transferdruck (Flex &amp; Flock)</li>
+                    <li>Thermotransfer</li>
+                    <li>Flockdruck in Sonderfarben</li>
+                    <li>Direktdruck auf Textil</li>
+                    <li>Retroreflektierende Veredelung</li>
+                    <li>Puff-Effekte &amp; 3D-Optik</li>
+                </ul>
+            </div>
 
+            <div class="service-card">
+                <span class="service-card__tagline">Auftritt im Netz</span>
+                <h3 class="service-card__title">Webdesign</h3>
+                <p class="service-card__text">Wir gestalten Websites, die zur gleichen visuellen Sprache wie Ihre
+                    Textilien und Folien passen — schlicht, schnell und auf das Wesentliche reduziert.</p>
+                <ul class="service-card__list">
+                    <li>Responsive Websites</li>
+                    <li>Landingpages</li>
+                    <li>Onepager für kleine Betriebe</li>
+                    <li>Pflege &amp; Aktualisierung</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="techniques__layout">
+                <div class="techniques__intro-col">
+                    <span class="techniques__eyebrow">Unsere Verfahren</span>
+                    <h2 class="techniques__title">Technik im <em>Detail</em></h2>
+                    <p class="techniques__intro">Jede Technik hat ihren Charakter. Wir beraten Sie, welche
+                        Veredelungsmethode zu Ihrem Material, Ihrer Stückzahl und Ihrer Wirkabsicht passt.</p>
+                </div>
+                <div class="techniques__grid">
+                    <div class="technique-card">
+                        <span class="technique-card__icon">◈</span>
+                        <h3 class="technique-card__name">Flex-Folie</h3>
+                        <p class="technique-card__text">Dehnbare Vinylfolie für Sport- und Funktionskleidung</p>
+                    </div>
+                    <div class="technique-card">
+                        <span class="technique-card__icon">◉</span>
+                        <h3 class="technique-card__name">Flock-Folie</h3>
+                        <p class="technique-card__text">Samtartige Textiloberfläche mit hoher Haptik</p>
+                    </div>
+                    <div class="technique-card">
+                        <span class="technique-card__icon">◐</span>
+                        <h3 class="technique-card__name">Transferfolie</h3>
+                        <p class="technique-card__text">Komplexe Mehrfarb-Motive auf Knopfdruck</p>
+                    </div>
+                    <div class="technique-card">
+                        <span class="technique-card__icon">◑</span>
+                        <h3 class="technique-card__name">Reflektiv</h3>
+                        <p class="technique-card__text">Retroreflektierende Materialien für Sicherheits-Workwear</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
     <section aria-label="Über uns"></section>
-
-    <section aria-label="Kontakt"></section>
+    <div class="about__layout">
+        <div class="about__content">
+            <span class="about__eyebrow">Über Janus Nova</span>
+            <h2 class="about__title">Wo Material <em>zur Botschaft</em> wird.</h2>
+            <div class="about__text">
+                <span>Janus Nova steht für Veredelung und Haltung. Seit 2026 arbeiten wir im Raum Nordfriesland
+                    mit Betrieben, Vereinen, Hotels und Einzelpersonen zusammen.</span>
+                <span>Unser Fokus liegt auf Textilveredelung und Webdesign. Keine Stickerei,
+                    kein klassischer Druck, keine Schilder- oder Lichtreklame.</span>
+                <span>Janus blickt in zwei Richtungen gleichzeitig: zur Tradition des Handwerks und zur Präzision
+                    moderner Technologie. Nova steht für das Neue — jedes Projekt ist ein Anfang.</span>
+            </div>
+            <div class="about__facts">
+                <span>Eigene Werkstatt · Nordfriesland</span>
+                <span>Kurze Lieferzeiten · nach Absprache</span>
+                <span>Ab 1 Stück · Mindestmenge</span>
+            </div>
+        </div>
+    </div>
+    <section aria-label="Kontakt">
+        <div class="contact__layout">
+            <div class="contact__info">
+                <span class="contact__eyebrow">Anfrage &amp; Kontakt</span>
+                <h2 class="contact__title">Ihr Projekt <em>beginnt hier.</em></h2>
+                <p class="contact__intro">Schildern Sie uns Ihr Vorhaben — wir melden uns zeitnah mit einer
+                    Einschätzung und einem unverbindlichen Angebot.</p>
+                <div class="contact__details">
+                    <div>
+                        <h4>Adresse</h4>
+                        Eikammsweg 10, 25821 Breklum
+                    </div>
+                    <div>
+                        <h4>Telefon</h4>
+                        +49 170 3828724
+                    </div>
+                    <div>
+                        <h4>E-Mail</h4>
+                        <a href="mailto:info@janusnova.de">info@janusnova.de</a>
+                    </div>
+                </div>
+            </div>
+            <form class="contact__form" id="contact-form">
+                <label for="name">
+                    <p>Name *</p>
+                    <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+                </label>
+                <label for="email">
+                    <p>E-Mail *</p>
+                    <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+                </label>
+                <label for="telefon">
+                    <p>Telefon</p>
+                    <input type="tel" name="telefon" id="telefon" placeholder="+49 ...">
+                </label>
+                <label for="leistungsbereich">
+                    <p>Leistungsbereich *</p>
+                    <select name="leistungsbereich" id="leistungsbereich" required>
+                        <option value="">Bitte wählen</option>
+                        <option value="textilveredelung">Textilveredelung</option>
+                        <option value="Webdesign">Webdesign</option>
+                        <option value="beides">Beides</option>
+                        <option value="offen">Noch offen</option>
+                    </select>
+                </label>
+                <label for="message">
+                    <p>Ihr Projekt *</p>
+                    <textarea name="message" id="message" cols="30" rows="8"
+                        placeholder="Beschreiben Sie Ihr Vorhaben: Material, Motiv, Stückzahl, Wunschtermin …"
+                        required></textarea>
+                </label>
+                <button class="button--primary" type="submit">Anfrage senden</button>
+            </form>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Janus Nova. Alle Rechte Vorbehalten.</p><br>
         <button> <a href="/impressum.html">Impressum</a></button>
+        <button> <a href="/datenschutz.html">Datenschutz</a></button>
+        <button type="button" data-consent-settings>Cookie-Einstellungen</button>
     </footer>
 
     <script type="module" src="/src/main.ts"></script>

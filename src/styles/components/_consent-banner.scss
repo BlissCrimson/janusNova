@@ -1,0 +1,59 @@
+.consent-banner {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  max-width: 40rem;
+  margin-inline: auto;
+  padding: 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #1a1a1a;
+  box-shadow: 0 0.5rem 2rem rgb(0 0 0 / 25%);
+
+  &__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  &__text {
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__button {
+    flex: 1 1 10rem;
+    padding: 0.625rem 1rem;
+    border: 2px solid #1a1a1a;
+    border-radius: 0.25rem;
+    background: #fff;
+    color: #1a1a1a;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    &:focus-visible {
+      outline: 3px solid #0057b8;
+      outline-offset: 2px;
+    }
+  }
+}
